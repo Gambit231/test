@@ -1,7 +1,6 @@
 <?php
- 
-include_once 'Z:\home\test.com\www\database.php';
-include_once 'Z:\home\test.com\www\records.php';
+include_once '/database.php';
+include_once '/records.php';
  
 $database = new Database();
 $db = $database->getConnection();
@@ -18,30 +17,30 @@ if ($num>0) {
     $records_arr["records"]=array();
 
 
-    while ($row = $stmt->fetchALL(PDO::FETCH_ASSOC)){
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
         extract($row);
 
         $records_item=array(
-            "Id" => $Id,
-            "Name" => $Name,
-            "Type" => $Type,
-            "Active" => $Active,
-            "Mult" => $Mult,
-            "Require" => $Require,
-			"Sort" => $Sort,
-			"Code" => $Code
+            "ID" =>html_entity_decode  ($ID),
+            "Name" =>html_entity_decode ($Name),
+            "Type" =>html_entity_decode ($Type),
+            "Active" =>html_entity_decode ($Active),
+            "Mult" =>html_entity_decode ($Mult),
+            "Require" =>html_entity_decode ($Require),
+			"Sort" =>html_entity_decode ($Sort),
+			"Code" =>html_entity_decode ($Code)
         );
 
         array_push($records_arr["records"], $records_item);
     }
 
-    http_response_code(200); 
-    echo json_encode($records_arr);
+   
+    echo json_encode($records_arr,JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
 }
 else {
 
-    http_response_code(404);
+    
     echo json_encode(array("message" => "Товары не найдены."), JSON_UNESCAPED_UNICODE);
 }
 	?>

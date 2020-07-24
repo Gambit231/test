@@ -3,7 +3,7 @@ $arr = array("records"=>array(
     array(   
             "ID"=> "256",
             "Name"=>  "Вес",
-            "Type"=>  "Number",
+            "v"=>  "Number",
             "Active"=>  "Y",
             "Mult"=>  "N",
             "Require"=>  "N",
@@ -31,6 +31,17 @@ $arr = array("records"=>array(
             "Require"=> "N",
             "Sort"=> "100",
             "Code"=> "H_PRICE",
+            "Delete"=> "N"
+		),
+	array(	
+			"ID"=> "107",
+            "Name"=> "Видео",
+            "Type"=> "string",
+            "Active"=> "Y",
+            "Mult"=> "N",
+            "Require"=> "N",
+            "Sort"=> "400",
+            "Code"=> "VIDEO_LINK",
             "Delete"=> "N"
 		),
 	array(	
