@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tSort.js &mdash; jQuery плагин Сортировка Таблицы</title>
+</head>
+<body>
+
+<!-- Шаг 1: создадим таблицу -->
+<table class="tsort">
+<thead>
+	<tr>
+		<th>Col 1</th>
+		<th>Col 2</th>
+		<th>Col 3</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>1</td>
+		<td>5</td>
+		<td>first</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>2</td>
+		<td>second</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>1</td>
+		<td>third</td>
+	</tr>
+</tbody>
+</table>
+
+<!-- Шаг 3: подключим библиотеку jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Шаг 4: подключим jQuery плагин «Сортировка Таблицы» -->
+<script src="tsort.min.js"></script>
+
+<!-- Шаг 5: активируем сортировку данных в таблицах -->
+<script>
+$( document ).ready(function() {
+	$('.tsort').tsort();
+});
+</script>
+</body>
+</html>
+
+<!-- Шаг 2: подключим CSS таблицу стилей «Сортировка Таблиц» -->
+<link rel="stylesheet" type="text/css" href="tsort.css">

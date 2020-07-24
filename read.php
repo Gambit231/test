@@ -39,8 +39,7 @@ if ($num>0) {
     echo json_encode($records_arr,JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
 }
 else {
-
-    
+  
     echo json_encode(array("message" => "Товары не найдены."), JSON_UNESCAPED_UNICODE);
 }
 	?>
